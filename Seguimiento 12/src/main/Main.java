@@ -43,7 +43,7 @@ public class Main {
 				circularList.deleteTurn();
 				System.out.println("Se borro el nodo.\n");
 				break;
-			case 9:
+			case 5:
 				continuar = false;
 			default:
 				System.out.println("Opcion incorrecta." + "\n" + "Seleccione nuevamente.");

@@ -6,20 +6,25 @@ public class ListaCircular {
 	private Nodo girar;
 	private int totalDelArreglo;
 
-	public void addLast(Nodo node) {
+	public void addLast(Nodo node1) {
 		if (principal == null) {
-			principal = node;
+			principal = node1;
 			principal.setNext(principal);
 			principal.setPrev(principal);
 			girar = principal;
 		} else {
 			Nodo nodo1 = principal.getPrev();
-			nodo1.setNext(node);
-			node.setPrev(nodo1);
-			node.setNext(principal);
-			principal.setPrev(node);
+			nodo1.setNext(node1);
+			node1.setPrev(nodo1);
+			node1.setNext(principal);
+			principal.setPrev(node1);
 		}
 		totalDelArreglo++;
+	}
+	
+
+	private void print(Nodo node) {
+		System.out.println("El turno es: " + node.getValue());
 	}
 
 	public void deleteTurn() {
@@ -42,7 +47,7 @@ public class ListaCircular {
 	public void nextTurn() {
 		girar.setCount(girar.getCount() + 1);
 		if (girar.getCount() == 3) {
-			System.out.println("Se elimino por salto de turnos el turno: " + girar.getValue());
+			System.out.println("Se elimino el turno para el siguiente: " + girar.getValue());
 			deleteTurn();
 		}
 		girar = girar.getNext();
@@ -52,8 +57,8 @@ public class ListaCircular {
 		print(girar);
 	}
 
-	private void print(Nodo node) {
-		System.out.println("El turno es: " + node.getValue());
+	@Override
+	public String toString() {
+		return super.toString();
 	}
-
 }
