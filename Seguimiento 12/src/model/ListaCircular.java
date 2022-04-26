@@ -1,21 +1,21 @@
 package model;
 
-public class Lista {
+public class ListaCircular {
 
-	private Node principal;
-	private Node girar;
+	private Nodo principal;
+	private Nodo girar;
 	private int totalDelArreglo;
 
-	public void addLast(Node node) {
+	public void addLast(Nodo node) {
 		if (principal == null) {
 			principal = node;
 			principal.setNext(principal);
 			principal.setPrev(principal);
 			girar = principal;
 		} else {
-			Node tail = principal.getPrev();
-			tail.setNext(node);
-			node.setPrev(tail);
+			Nodo nodo1 = principal.getPrev();
+			nodo1.setNext(node);
+			node.setPrev(nodo1);
 			node.setNext(principal);
 			principal.setPrev(node);
 		}
@@ -24,14 +24,14 @@ public class Lista {
 
 	public void deleteTurn() {
 		if (totalDelArreglo != 1) {
-			Node prev = girar.getPrev();
-			Node next = girar.getNext();
-			prev.setNext(next);
-			next.setPrev(prev);
+			Nodo previo = girar.getPrev();
+			Nodo siguiente = girar.getNext();
+			previo.setNext(siguiente);
+			siguiente.setPrev(previo);
 			if (girar.equals(principal)) {
-				principal = next;
+				principal = siguiente;
 			}
-			girar = next;
+			girar = siguiente;
 		} else {
 			girar = null;
 			principal = null;
@@ -52,7 +52,7 @@ public class Lista {
 		print(girar);
 	}
 
-	private void print(Node node) {
+	private void print(Nodo node) {
 		System.out.println("El turno es: " + node.getValue());
 	}
 

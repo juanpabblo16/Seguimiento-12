@@ -1,14 +1,14 @@
 package model;
 
-public class Node {
+public class Nodo {
 
 	private int val;
 	private int count;
 
-	private Node anterior;
-	private Node siguiente;
+	private Nodo anterior;
+	private Nodo siguiente;
 
-	public Node(int value) {
+	public Nodo(int value) {
 		this.val = value;
 		this.count = 0;
 	}
@@ -21,19 +21,19 @@ public class Node {
 		this.val = value;
 	}
 
-	public Node getPrev() {
+	public Nodo getPrev() {
 		return anterior;
 	}
 
-	public void setPrev(Node prev) {
+	public void setPrev(Nodo prev) {
 		this.anterior = prev;
 	}
 
-	public Node getNext() {
+	public Nodo getNext() {
 		return siguiente;
 	}
 
-	public void setNext(Node next) {
+	public void setNext(Nodo next) {
 		this.siguiente = next;
 	}
 

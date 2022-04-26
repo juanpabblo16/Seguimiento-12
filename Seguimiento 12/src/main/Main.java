@@ -1,14 +1,14 @@
 package main;
 
 import java.util.Scanner;
-import model.Lista;
-import model.Node;
+import model.ListaCircular;
+import model.Nodo;
 
 public class Main {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		Lista circularList = new Lista();
+		ListaCircular circularList = new ListaCircular();
 		boolean continuar = true;
 		int turno = 1;
 		while (continuar) {
@@ -22,7 +22,7 @@ public class Main {
 			int opt = Integer.parseInt(sc.nextLine());
 			switch (opt) {
 			case 1:
-				circularList.addLast(new Node(turno));
+				circularList.addLast(new Nodo(turno));
 				System.out.println("Has seleccionado la opcion 1");
 
 				System.out.println("Turno aniadido correctamente.\n");
